@@ -6,7 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h1><a href="{% url 'post_list'%}">My Blog</a></h1>
+    <header>
+        <h1><a href="{% url 'post_list'%}">My Blog</a></h1>
+        <a href="{% url 'post_create' %}">Crear nuevo post</a>
+    </header>
+    
     {% block content %}
     {% endblock content%}
 </body>
