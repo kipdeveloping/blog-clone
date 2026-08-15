@@ -1,6 +1,7 @@
 {% extends "__base.html"%}
 {% block content %}
     <a href="{% url 'post_update' post.pk %}">Editar post</a>
+    <a href="{% url 'post_delete' post.pk %}">Eliminar post</a>
     <main>
         <h2>{{post.title}}</h2>
         <p><strong>{{ post.created_at }}</strong></p>

@@ -1,0 +1,12 @@
+{% extends "__base.html" %}
+{% block content %}
+    <main>
+        <h2>Eliminar Publicacion</h2>
+        <p>Are you sure?</p>
+        <form method = "post">
+            {% csrf_token %}
+            <button type="submit">Si, eliminar</button>
+            <a href="{% url 'post_detail' post.pk %}"></a>
+        </form>
+    </main>
+{% endblock content %}
