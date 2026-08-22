@@ -1,7 +1,10 @@
 {% extends "__base.html"%}
 {% block content %}
-    <a href="{% url 'post_update' post.pk %}">Editar post</a>
-    <a href="{% url 'post_delete' post.pk %}">Eliminar post</a>
+
+    {% if user.is_authenticated and user == post.author %}
+        <a href="{% url 'post_update' post.pk %}">Editar post</a>
+        <a href="{% url 'post_delete' post.pk %}">Eliminar post</a>
+    {% endif %}
     <main>
         <h2>{{post.title}}</h2>
         <p><strong>{{ post.created_at }}</strong></p>
